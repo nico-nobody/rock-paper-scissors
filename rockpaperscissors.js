@@ -22,20 +22,37 @@ function getPlayerChoice() {
   return choice;
 }
 
-// 3: Compare choices and decide winner
+// 3: Compare choices and display winner
 // Rock > Scissors
 // Paper > Rock
 // Scissors > Paper
 function playRound(playerSelection, computerSelection) {
+  let outcome;
+  
   if (playerSelection === computerSelection) {
-    return 'draw';
+    outcome = 'draw';
   } else if (playerSelection === 'rock') {
-    return computerSelection === 'scissors' ? 'player' : 'computer';
+    outcome = computerSelection === 'scissors' ? 'player' : 'computer';
   } else if (playerSelection === 'paper') {
-    return computerSelection === 'rock' ? 'player' : 'computer';
+    outcome = computerSelection === 'rock' ? 'player' : 'computer';
   } else if (playerSelection === 'scissors') {
-    return computerSelection === 'paper' ? 'player' : 'computer';
+    outcome = computerSelection === 'paper' ? 'player' : 'computer';
   }
+
+  return outcome;
 }
 
-// 4: Display winner and results
+//4: Play a game comprised of 5 rounds
+function game() {
+  let playerPoints = 0;
+  let computerPoints = 0;
+  for (let i = 0; i < 5; i++) {
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerChoice();
+    let winner = playRound(playerSelection, computerSelection);
+    if (winner === 'player') playerPoints++;
+    else if (winner === 'computer') computerPoints++;
+    console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
+  }
+  return `Game. Player: ${playerPoints}, Computer: ${computerPoints}`;
+}
