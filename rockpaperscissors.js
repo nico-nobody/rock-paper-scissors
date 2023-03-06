@@ -12,5 +12,13 @@ function getComputerChoice() {
   }
 }
 // 2: Prompt user for their choice
+function getPlayerChoice() {
+  let choice;
+  do {
+    let input = prompt('Choose: Rock, Paper, or Scissors?');
+    choice = input.toLowerCase();
+  } while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors');
+  return choice;
+}
 // 3: Compare choices and decide winner
 // 4: Display winner and results
