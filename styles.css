@@ -1,6 +1,6 @@
-/* * {
-  background: rgb(255, 153, 153, 20);
-} */
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
 
 body {
   display: flex;

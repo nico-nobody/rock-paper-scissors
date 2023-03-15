@@ -3,7 +3,6 @@
 // 1: Get playerSelection from their button choice and initiate round.
 let playerChoice;
 const buttons = document.querySelectorAll('#weapons-container > button')
-// console.log(buttons)
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     playerChoice = button.id;
@@ -30,7 +29,6 @@ function playRound(playerSelection) {
   } else if (playerSelection === 'scissors') {
     outcome = computerSelection === 'paper' ? 'player' : 'computer';
   }
-  // console.log(playerSelection ,computerSelection, outcome);
   const results = document.querySelector('#results');
   results.innerText = `Player: ${playerSelection}, Computer: ${computerSelection}\nRound: ${outcome}`;
   updateTotals(outcome);
@@ -56,19 +54,3 @@ function updateTotals(winner) {
   const totals = document.querySelector('#total-wins');
   totals.innerText = `Total wins:\nPlayer: ${playerTotal}, Computer: ${computerTotal}`;
 }
-
-
-//4: Play a game comprised of 5 rounds
-// function game() {
-//   let playerPoints = 0;
-//   let computerPoints = 0;
-//   for (let i = 0; i < 5; i++) {
-//     let computerSelection = getComputerChoice();
-//     let playerSelection = getPlayerChoice();
-//     let winner = playRound(playerSelection, computerSelection);
-//     if (winner === 'player') playerPoints++;
-//     else if (winner === 'computer') computerPoints++;
-//     console.log(`Player: ${playerSelection}, Computer: ${computerSelection}`);
-//   }
-//   return `Game. Player: ${playerPoints}, Computer: ${computerPoints}`;
-// }
