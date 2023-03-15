@@ -1,0 +1,14 @@
+/* * {
+  background: rgb(255, 153, 153, 20);
+} */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+}
